@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body{
 	background-color:white;
+	background-image:url("http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/1/silverware.jpg");
 	color:#404040;
 	font-size:11pt;
 	font-family:Georgia, Garamond, serif; 
@@ -35,4 +36,7 @@ a:link{
 	font-family:monospace;
 	font-size:0.7em;
 	
+}
+li{
+	list-style-image: url("http://www.cs.washington.edu/education/courses/cse190m/09sp/homework/1/pie_icon.gif");
 }
