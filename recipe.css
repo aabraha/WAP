@@ -31,3 +31,8 @@ a:link{
 	background-clip:content-box;
 	font-style:italic;
 }
+#copyright{
+	font-family:monospace;
+	font-size:0.7em;
+	
+}
