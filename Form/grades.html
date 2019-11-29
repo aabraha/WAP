@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retrieve Grades</title>
+    <link rel="stylesheet" type="text/css" href="nerdluv.css">
+</head>
+<body>
+<h1>Retrieve your grade</h1>
+<form action="http://mumstudents.org/params.php">
+        <div class="inputElement">
+            <label> Name:</label>
+            <input type="text" name="name" size="16"/>
+        </div>
+        <div class="inputElement">
+            <label> Student ID:</label>
+            <input type="text" name="gender" size="16"/>
+        </div>
+        <div class="inputElement">
+            <label>Select assignment:</label>
+            <select name="assignment">
+                <option value="0">Select assignment</option>
+                <option value="1">Assignment 1</option>
+                <option value="2">Assignment 2</option>
+                <option value="3">Assignment 3</option>
+                <option value="4">Assignment 4</option>
+            </select>
+        </div>
+        <div class="inputElement">
+            <label>Entry: </label>
+            <input name="entry" type="radio" value="february"/> February
+            <input name="entry" type="radio" value="may"/> May
+            <input name="entry" type="radio" value="august"/> August
+            <input name="entry" type="radio" value="november"/> November
+        </div><div class="inputElement">
+            <label>Are you really looking your grade?</label>
+            <input name="signature" type="checkbox" value="Yes"/>Yes
+        </div><div class="inputElement">
+            <input name="submit" type="submit" value="Retrieve Grade"/>
+        </div>
+</form>
+<a href="https://validator.w3.org/check/referer"><img src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png" alt="w3c html validation"/></a>
+<a href="https://jigsaw.w3.org/css-validator/check/referer"><img src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png" alt="w3c css validation"/></a>
+</body>
+</html>
