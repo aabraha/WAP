@@ -1,0 +1,144 @@
+body{
+    background-image: url("http://mumstudents.org/cs472/2019-10-BL/Homework/2/resources/background.png");
+    font-size: 8pt;
+    font-family: Verdana, Tahoma,sans-serif;
+}
+#bannerDiv{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    background-image: url("http://mumstudents.org/cs472/2019-10-BL/Homework/2/resources/bannerbg.png");
+    background-repeat: repeat;
+}
+#headerDiv{
+    position: relative;
+    margin-top: 60px;
+    text-align: center;
+}
+#centeredHeading{
+    font-size: 24pt;
+    font-family: Tahoma, Verdana, sans-serif;
+    text-shadow: 3px 3px #999999;
+}
+#contentArea{
+    width: 800px;
+    margin: auto;
+    border:4px solid gray;
+    border-radius: 25px;
+}
+#leftSection{
+    width: 550px;
+    height:10%;
+    display:inline-block;
+    background-image: url("http://mumstudents.org/cs472/2019-10-BL/Homework/2/resources/rbg.png");
+    background-repeat: repeat-x;
+    border-radius: 20px 0 0 0;
+    padding: 0;
+    line-height: 0.0;
+}
+#overAllRating{
+    display: inline;
+    font-size: 48pt;
+    font-weight: bold;
+    color: red;
+    overflow: hidden;
+    text-align: center;
+}
+#rottenImageLeft{
+    border-radius: 20px;
+}
+#firstColumnDiv{
+    margin-left:2%;
+    margin-right:2%;
+    float: left;
+}
+#secondColumnDiv{
+    margin-right:2%;
+    float: right;
+}
+#firstColumnDiv,#secondColumnDiv{
+    width: 47%;
+}
+p.review{
+    margin-top: 20px;
+    width:90%;
+    height:auto;
+    font-weight:bold;
+    font-size:8pt;
+    line-height:100%;
+    background-color: #E8DC9B;
+    border: 2px solid gray;
+    border-radius:10px;
+    text-align:justify;
+    padding:8px;
+    overflow: hidden;
+}
+p.reviewerInfo{
+    line-height:100%;
+}
+.reviewIcon{
+    margin-right:8px;
+    float:left;
+}
+.criticIcon{
+    margin-right:5px;
+    float:left;
+}
+.publisher{
+    font-style:italic;
+}
+#generalOverview{
+    background-color: #A2B964;
+    width: 250px;
+    border-radius: 0px 20px 0 0;
+    float:right;
+    height: 80%;
+    font-size: 8pt;
+    font-family: Arial,sans-serif;
+}
+li{
+    list-style-type:none;
+}
+a{
+  text-decoration:none;
+}
+#overviewImage{
+    border-radius: 0 20px 0 0;
+}
+
+dt{
+    font-weight: bold;
+}
+dl, .linkLists, .linkSpan{
+    margin-top: 10pt;
+    margin-left:10pt ;
+    margin-right: 10pt;
+}
+#htmlValidator{
+    position: fixed;
+    bottom: 25pt;
+    right: 0;
+}
+#cssValidator{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.validatorImage{
+    opacity: 0.5;
+}
+#footerDiv{
+    clear: both;
+}
+#footerText{
+    bottom: 0;
+    background-color: #A2B964;
+    width: 800px;
+    height: 20px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 0 0 20px 20px;
+ }

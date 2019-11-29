@@ -1,0 +1,45 @@
+body{
+    font-size: 12pt;
+    font-family: "Verdana", "Geneva", sans-serif;
+}
+form{
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-bottom: 50px;
+}
+label{
+    display: block;
+    width: 250px;
+    float: left;
+    height: 1.5em;
+}
+fieldset{
+    display: inline-block;
+    background-color: #E0E0FF;
+    border-radius:10px ;
+    padding: 20px;
+}
+legend {
+    border: 2px solid gray;
+}
+#nerdLuvImg, #imageText{
+    display: block;
+    margin-left: 15px;
+}
+#personalityTypeText{
+    color: red;
+}
+.formElement, .inputElement{
+    position: relative;
+    padding: 5px;
+}
+input[type="submit"]{
+    background-color: violet;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#paragraphBackToFront{
+    display: block;
+    text-decoration: none;
+    color: red;
+}

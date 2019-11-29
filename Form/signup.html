@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <link rel="stylesheet" type="text/css" href="nerdluv.css">
+</head>
+<body>
+    <img src="../images/nerdluv.png" alt="Nerdluv" id="nerdLuvImg">
+    <span id="imageText">where meek geeks meet</span>
+        <form action="http://mumstudents.org/params.php">
+            <fieldset class="fieldset">
+                <legend> New User Sign Up:</legend>
+                <div class="formElement">
+                    <label> Name:</label><input type="text" name="name" size="16"/>
+                </div>
+                <div class="formElement"><label> Gender:</label>
+                    <input type="radio" name="gender" value="male"/>Male
+                    <input type="radio" name="gender" value="female" checked/>Female
+                </div>
+                <div class="formElement">
+                    <label> Age:</label>
+                    <input type="text" name="age" size="6" maxlength="2"/>
+                </div>
+                <div class="formElement">
+                    <label> Personality type: </label>
+                    <input type="text" name="personality" size="6" maxlength="4"/>(<span id="personalityTypeText">Don't know your type?</span>) </div>
+                <div class="formElement"><label> Favourite OS:</label>
+                    <select name="favouriteOS">
+                        <option value="windows" selected>Windows</option>
+                        <option value="linux">Linux</option>
+                        <option value="macOs">macOS</option>
+                    </select>
+                </div>
+                <div class="formElement">
+                    <label> Seeking age: </label>
+                    <input name="seekingAgeFrom" type="text" placeholder="min" size="6" maxlength="2"> to
+                    <input name="seekingAgeTo" type="text" placeholder="max" size="6" maxlength="2">
+                </div>
+                <div class="formElement">
+                    <input name="submit" type="submit" value="Sign Up"/>
+                </div>
+            </fieldset>
+        </form>
+<p>This page is for single nerds to meet and date each other!
+    Type in your personal information and wait for the nerdly luv to begin!
+    Thank you for using our site.</p>
+    <hr>
+<p>Results and page &copy; Copyright NerdLuv Inc.</p>
+<a href="../index.html" id="paragraphBackToFront"><img src="../images/back.gif" alt="back button"> Back to the front page.</a>
+<a href="http://validator.w3.org/check/referer">
+    <img src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png" alt="w3c html validation"/>
+</a>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png" alt="w3c css validation"/>
+</a>
+</body>
+</html>
