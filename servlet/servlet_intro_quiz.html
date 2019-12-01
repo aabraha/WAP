@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Servlet Intro Quiz</title>
+    <link href="quiz.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>Servlet Intro Quiz</h1>
+<ol>
+    <li> Difference between Web Server, Application Server and Web Container
+
+<p> A web server is mainly meant to serve static pages.
+    Application Server on the other hand is responsible for generating dynamic content by executing server-side code e.g. JSP, Servlet or EJB.
+    Web container is an engine that is responsible for generating HTML by executing JSP and Servlet on Server side.
+</p><p>
+    Apache and IIS are two popular web servers.
+    Apache is used everywhere including Java world but IIS is more popular in Microsoft ASP .NET world.
+    Apache HTTPD one popular example of web server often used in conjunction with Tomcat to host many Java web apps.
+    From Java EE perspective couple of popular application servers are IBM WebSphere, Oracle WebLogic, Glassfish and Redhat's JBoss while Apache Tomcat and Jetty are two of the most popular web containers in Java web world.
+    </p>
+        </li>
+    <li>What is a servlet?
+        <p>
+Servlets are Java programs that runs on Java-enabled web server or application server to generate Java based dynamic web page. They are used to handle the request obtained from the web server, process the request, produce the response, then send response back to the web server.
+Servlets are managed by a servlet engine or container.
+Servlets are the basis of java based dynamic web applications.</p>
+    </li>
+<li>How do web servers and web containers interact with servlets?
+    <p> When a request comes to the web server, if the server sees the request is for a servlet, it passes the request data to the servlet container.
+        The servlet container locates the servlet, creates request and response objects and passes them to the servlet, and returns to the web server the response stream that the servlet produces.
+        The web server sends the response back to the client browser to be rendered.
+    </p>
+</li>
+    <li> Who creates request objects?
+        <p>Container receives new request for a servlet, creates HttpServletRequest and HttpServletResponse objects, calls service method on HttpServlet object in thread and when thread completes, converts response object into HTTP response message</p>
+    </li>
+
+<li> What are the states in the servlet lifecycle?
+    <img src="https://www.tutorialspoint.com/servlets/images/servlet-lifecycle.jpg" alt="servlet lifecycle"/>
+<ul>
+    <li>Load
+        <p>Load servlet class (Class c = Class.forname(...))</p>
+    </li>
+    <li>Create
+        <p>Instantiate servlet (c.newInstance());</p>
+    </li>
+    <li>Init
+        <p>init() called only once in the servlet's life. Must complete before Container can call service(). </p>
+    </li>
+    <li>Service
+        <p>service() (called for each request, each request runs in a separate thread) </p>
+    </li>
+    <li>Destroy
+    	<p>destroy() (called only once to close opened resources)	</p>
+   	</li>
+
+</ul>
+    <li>
+    Who calls init and when?
+    <p>Servlet container once in the servlet’s lifecycle.</p>
+</li>
+    <li>Which of init, service, and doGet should you override?
+    <p>
+        All of those three methods can be overridden but most of the time there is no need to override the service method.
+    </p>
+    </li>
+    <li>
+    In what sense are servlets multi-threaded?
+    <p>
+        Multiple requests to the same servlet may be executed at the same time by creating a thread for every request therefore achieving multi-threading.
+    </p>
+    </li>
+<li>What are the implications of this for servlet instance variables?
+<p>
+   Servlet instance variables that are accessed and modified by multiple threads cause thread safety problems.
+</p>
+</li>
+</ol>
+
+
+
+
+</body>
+</html>

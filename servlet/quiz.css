@@ -1,0 +1,9 @@
+li{
+    font-weight: bold;
+}
+li > p{
+    font-weight: normal;
+}
+li>img{
+    float: right;
+}
