@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Servlet Intro Quiz</title>
+    <link href="state_mgmt_quiz.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>Servlet Intro Quiz</h1>
+<ol>
+    <li> Can post requests be bookmarked? What are the problems?
+
+        <p> Post requests can't be bookmarked in full way just like Get requests.
+            Get requests can be bookmarked because form data are sent by appending it to url and bookmarks store those parameters as part of the url. But form data submitted using the Post method aren't sent in the URL but as body of the request.</p>
+    </li>
+    <li>What is the purpose of request dispatching?
+        <p>
+            Servlets may internally pass ("forward") the request processing to another local resource.
+            RequestDispatcher is therefore used in such cases(request dispatching) to forward to another servlet or jsp in the same website as follows.
+            <pre>RequestDispatcher requestDispatcher = request.getRequestDispatcher("absolute or relative uri");
+            requestDispatcher.forward(request,response);</pre>
+        </p>
+    </li>
+    <li>What is the difference between redirect and request dispatch?
+        <p>
+            Redirect is sent to the client as a response while the request dispatch is performed completely in the server and the result of the forward from the request dispatch is returned as a response to the client.
+        </p>
+    </li>
+    <li> What is an attribute ?
+        <p>
+            Attributes are name(String) and value(objects) pairs in the server bound to either of the three servlet API objects that is HttpServletRequest, HttpSession, ServletContext.
+            Only request attributes are thread safe.
+        </p>
+    </li>
+
+    <li> What is the difference between attributes and parameters?
+        <p>
+            Parameters are form data sent as part of http requests in the form of key value pairs while attributes are name(String) and value(objects) pairs bound to either of the three servlet API objects that is HttpServletRequest, HttpSession, ServletContext.
+        </p>
+    <li>
+        What are dangers of using attributes?
+        <p>
+            Since session level and application level attributes are shared by multiple servlets and requests they aren't thread safe.
+        </p>
+    </li>
+    <li>What does it mean to say that http is stateless? Give an example of a stateful protocol.
+        <p>
+            By http is a stateless protocol, we mean after handling request and response between client and server no memory is stored about who sent and other informations.
+            FTP is an example of stateful protocol because it store who is accessing or downloading files.
+        </p>
+    </li>
+    <li>
+        Give 5 different methods for maintaining state information (count each attribute scope as one
+        method).
+        <p>
+            <ul>
+                <li>Request Scope which is destroyed after after servlet finishes processing it.</li>
+                <li>Session Scope which is destroyed when user closes browser.</li>
+                <li>Application Scope which is destroyed when container stops.</li>
+                <li>Cookies which in return can be temporary and get deleted when a browser closes or permanent which gets deleted when a given maximum timeout reaches.</li>
+                <li>Hidden form fields</li>
+            </ul>
+        </p>
+    </li>
+    <li>How long does a session last?
+        <p>
+            Typically a session lasts 30 minutes of inactivity but this can be adjusted so that it lasts from few seconds to a few hours.
+        </p>
+    </li>
+    <li>What is a cookie, and how long does a cookie last?
+        <p>
+            A cookie is a small information sent from websites stored in the browser to keep stateful information and record users' browsing information. Cookies last in users computers until the user closes the browser.
+        </p>
+    </li>
+    <li>What is the purpose of URL rewriting?
+        <p>
+            URL rewriting is another technique of session management when browser doesn't support cookies.
+        </p>
+    </li>
+    <li>Why does the request attribute report ‘null’ for the maintaining state demo?
+        <p>
+            Because states weren't store at the time of calling the states.
+        </p>
+    </li>
+</ol>
+
+
+
+
+</body>
+</html>
