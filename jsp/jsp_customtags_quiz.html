@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSP Custom Tags</title>
+    <link href="jsp_customtags.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>JSP Custom Tags</h1>
+<ol>
+    <li> Rewrite the JSP page in the first demo (forEach) to use scripting instead of the JSTL
+        forEach.
+
+        <pre>
+
+            &lt;%@page import="java.util.*"%&gt;
+            &lt;%@page import="net.mumde.cs545.Student"%&gt;
+            &lt;%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%&gt;
+            &lt;%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %&gt;
+            &lt;!DOCTYPE html &gt;
+            &lt;html&gt;
+            &lt;table&gt;
+            &lt;head&gt;
+            &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt;
+            &lt;title&gt;Lecture 5&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;table&gt;
+                &lt;%
+                    List&lt;Student&gt; sts = new ArrayList(Arrays.asList(request.getAttribute("students")));
+                    for(int i = 0;i&lt;sts.size();i++){
+                        out.print("&lt;tr&gt;");
+                            out.print("&lt;td&gt; " + sts.get(i).getName() + "&lt;/td&gt;");
+                            out.print("&gt;td&gt; " + sts.get(i).getAge() + "&lt;/td&gt;");
+                            out.print("&lt;/tr&gt;");
+                    }
+                %&gt;
+            &lt;/table&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+
+        </pre>
+    </li>
+    <li>How do custom tags relate to JSTL?
+        <p>
+            JSTL is a standard library of JSP actions, but JSP allows
+            developers to create their own actions
+        </p>
+    </li>
+    <li>What is the role of the URI in the TLD and the taglib directive?
+        <p>
+            It specifies the locatio of the Tag Library Descriptor file.
+        </p>
+    </li>
+    <li> What is a tag handler class?
+        <p>
+        It is a Java class that acts as a tag handler.
+
+        </p>
+    </li>
+
+    <li> What is the role of attribute setters in a tag handler class?
+        <p>
+            They set the value of the attributes of the tag.
+        </p>
+    </li>
+    <li>
+        What is the role of the doTag() method in a tag handler class?
+        <p>
+            The doTag() method called by the container has the tag logic, iteration, body evaluations, etc.
+        </p>
+    </li>
+    <li>What does the operation getJspContext().getOut().write(“Hi Bob”) do when called in
+        a doTag() method?
+        <p>
+            Generates compiler error.
+        </p>
+    </li>
+    <li>
+        What does the operation getJspBody().invoke(null) do when called in a doTag()
+        method?
+        <p>
+            It throws a JspException.
+        </p>
+    </li>
+</ol>
+
+
+
+
+</body>
+</html>

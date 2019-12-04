@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSP Intro Quiz</title>
+    <link href="jsp_intro_quiz.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>JSP Intro Quiz</h1>
+<ol>
+    <li> What is the main value of Java Server Pages?
+
+        <p> JavaServer Pages (JSP) are a technology for developing
+            web pages that support dynamic content, allowing
+            developers to insert java code in HTML pages by making
+            use of special JSP tags, most of which start with <% and
+            end with %>. </p>
+    </li>
+    <li>How are JSP pages related to servlets?
+        <p>
+            When a user requests a jsp page, the jsp page is parsed, and a servlet class is generated and compiled.
+        </p>
+    </li>
+    <li>How are JSP pages related to HTML?
+        <p>
+            JSP pages are html pages which have embedded java code inside.
+        </p>
+    </li>
+    <li> Give an example of a JSP scriptlet and show how it will look in the JSP servlet
+        <p>
+            <pre>
+            <%@ page import="java.util.Date" %>
+                &lt;HTML&gt;
+                &lt;BODY&gt;
+            <% System.out.println( "Evaluating date now" ); Date date = new Date(); %>
+            Hello! The time is now <%= date %>
+                &lt;/BODY&gt;
+                &lt;/HTML&gt;
+            </pre>
+            output
+            <p>Evaluating date now 'current date'</p>
+            <p>Hello! The time is now 'current date'</p>
+        </p>
+    </li>
+
+    <li> Give an example of a JSP declaration and show how it will look in the JSP servlet.
+        <p>
+            <code>
+            <html>
+            <head>
+                <title>My First JSP Page</title>
+            </head>
+            <%!
+            int count = 0;
+            %>
+            <body>
+            Page Count is:
+            <% out.println(++count); %>
+            </body>
+            </html>
+            </code>
+            <pre>
+            public class hello_jsp extends HttpServlet
+            {
+            int count=0;
+            public void _jspService(HttpServletRequest request, HttpServletResponse response)
+            throws IOException,ServletException
+            {
+            PrintWriter out = response.getWriter();
+            response.setContenType("text/html");
+            out.write("<html><body>");
+
+        out.write("Page count is:");
+        out.print(++count);
+        out.write("</body></html>");
+            }
+            }
+        </pre>
+        </p>
+    <li>
+    Give an example of a JSP comment and show how it will look in the JSP servlet.
+        <p>
+            <%-- comment--%>
+            It will be discarded.
+        </p>
+    </li>
+    <li>Give an example of a JSP expression and show how it will look in the JSP servlet.
+        <p>
+            <%= count++ %> becomes out.println(++count);
+        </p>
+    </li>
+    <li>
+        Give an example of a JSP directive and show how it will look in the JSP servlet.
+        <p>
+            <%= page import = "java.util.Date" %>
+        </p>
+    </li>
+    <li>Explain how an EL expression is evaluated.
+        <p>
+            <ul>
+                <li> checks page scope for an attribute named "something", if found use it.</li>
+                <li> otherwise check request scope for an attribute named "something",if found use it </li>
+                <li>otherwise check session scope for an attribute named "something", if found use it</li>
+                <li> otherwise check application scope for an attribute named "something", if found use it. </li>
+                <li> otherwise ignore the expression.</li>
+            </ul>
+        </p>
+    </li>
+    <li>Explain how servlet attributes are involved in EL expressions.
+        <p>
+            String name = "James Bond";
+            request.setAttribute("007",name);
+
+            ${requestScope.007}
+        </p>
+    </li>
+    <li>Explain how servlets and JSPs use request dispatch to interact.
+        <p>
+            request dispatch is used to forward to another resource.
+        </p>
+    </li>
+</ol>
+
+
+
+
+</body>
+</html>
