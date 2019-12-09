@@ -1,0 +1,25 @@
+body{
+	background-color:silver;
+}
+.flex-container {
+  display: flex;
+ 
+}
+
+.content {
+  flex-grow:1;
+  float:left;
+  margin:5pt;
+}
+li{
+	list-style-type: none;
+}
+p{
+	font-weight:bold;
+}
+a{
+	text-decoration:none;
+}
+.footer{
+	clear:left;
+}
