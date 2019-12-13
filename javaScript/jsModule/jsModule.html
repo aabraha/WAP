@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Servlet Intro Quiz</title>
+    <link href="jsModuleExercises.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>JavaScript Module Exercise</h1>
+<ol>
+    <li> Determine what this Javascript code will print out (without running it):
+		<pre> 
+			x = 1;
+			var a = 5;
+			var b = 10;
+			var c = function(a, b, c) {
+				document.write(x);
+				document.write(a);
+				var f = function(a, b, c) {
+					b = a;
+					document.write(b);
+					b = c; 
+					var x = 5;
+				}
+				f(a,b,c);
+                var x = 10;
+				document.write(b);
+ 			}
+			c(8,9,10);
+			document.write(b);
+			document.write(x);
+        </pre>
+        <p>The output is: undefined889101</p>
+    </li>
+    <li>Define Global Scope and Local Scope in Javascript.
+        
+        <p>Any declaration outside function is in global scope while all declarations inside a function are locally scoped.</p>
+
+    </li>
+    <li>Consider the following structure of Javascript code
+    	<pre> // Scope A
+                function XFunc () {
+                    // Scope B
+                    function YFunc () {
+                        // Scope C
+                    };
+                }; 
+        </pre>
+        <ul>
+            <li>Do statements in Scope A have access to variables defined in Scope B and C?
+                <p>No</p>
+            </li>
+            <li>Do statements in Scope B have access to variables defined in Scope A?
+                <p>Yes</p>
+            </li>
+            <li>Do statements in Scope B have access to variables defined in Scope C?
+                <p>No</p>
+            </li>
+            <li>Do statements in Scope C have access to variables defined in Scope A?
+                <p>Yes</p>
+            </li>
+            <li>Do statements in Scope C have access to variables defined in Scope B?
+                <p>Yes</p>
+            </li>
+        </ul>
+    </li>
+    <li> What will be printed by the following (answer without running it)?
+        <pre>
+        var x = 9;
+        function myFunction() {
+            return x * x;
+        }
+        document.write(myFunction());
+        x = 5;
+        document.write(myFunction());
+        </pre>
+        <p>8125</p>
+    </li>
+    <li> What will the alert print out? (Answer without running the code. Remember ‘hoisting’.)?
+        <pre>
+            var foo = 1;
+            function bar() {
+                if (!foo) {
+                    var foo = 10;
+                }
+                alert(foo);
+            }
+            bar();
+            </pre>
+            <p>10</p>
+    </li>
+    <li> Consider the following definition of an add( ) function to increment a counter variable:
+        <pre>
+        var add = (
+                    function () {
+                        var counter = 0;
+                        return function () {
+                                    return counter += 1;
+                            }
+                    }
+                )();
+        </pre>
+        <p>Modify the above module to define a count object with two methods: add() and reset(). The count.add() method adds one to the counter (as above). The count.reset() method sets the counter to 0.</p>
+        <pre>
+            var count  = (function(){
+                        var counter =0;
+            return {
+                    add: function(){
+                    return counter += 1;
+                },
+                reset: function(){
+                    return counter = 0;
+                }
+            }
+                        })();
+            
+            
+            console.log(count.add());
+        </pre>
+    </li>
+    <li>In the definition of add( ) shown in question 6, identify the "free" variable. 
+        In the context of a function closure, what is a "free" variable?
+        <p>
+        A free variable is a variable used within a function, which is neither a formal parameter to the function nor defined in the function's body (and in scope at the point of the variable's use). counter is free variable in  add.
+        </p>
+    </li>
+<li>The add( ) function defined in question 6 always adds 1 to the counter each time it is called. Write a definition of a function make_adder(inc), whose return value is an add function with increment value inc (instead of 1). Here is an example of using this function:
+        <pre> 
+                add5 = make_adder(5);
+                add5( ); add5( ); add5( ); 
+                add7 = make_adder(7);
+                add7( ); add7( ); add7( ); </pre>
+        <pre>
+            var count  = (function(){
+                            var counter =0;
+                            return {
+                                    add: function(){
+                                            return counter += 1;
+                                        },
+                                    reset: function(){
+                                                return counter = 0;
+                                            },
+                                    make_adder : function(inc){ 
+                                                return function(){ return counter +=inc;};
+                                            }
+                            }   
+                        })();
+            
+            var add5 = count.make_addr(5);     
+            console.log(add5());
+        
+        </pre>
+    </li>
+<li>Suppose you are given a file of Javascript code containing a list of many function and variable declarations. All of these function and variable names will be added to the Global Javascript namespace. What simple modification to the Javascript file can remove all the names from the Global namespace?
+        <pre>
+            Use either of  Module Patterns or Object Literals.
+        </pre>
+    </li>
+<li>Using the Revealing Module Pattern, write a Javascript definition of a Module that creates an Employee Object with the following fields and methods:
+
+
+        <pre>
+	        var employee = 
+            (function(){
+	           //fields
+               let name;
+               let age;
+               let salary;
+                //getter & setter methods
+                let setAge = function(newAge){this.age = newAge};
+                let setSalary = function(newSalary){this.salary = newSalary};
+                let setName = function(newName){this.name = newName};
+                let getAge = function(){return this.age;};
+                let getSalary = function(){return this.salary;};
+                let getName = function(){return this.name;};
+
+                //extra methods
+                let increaseSalary =  function(percentage){
+                                            setSalary(getSalary()+(getSalary()*percentage))
+                                        };
+                let incrementAge =  function(){setAge(getAge()+1)};
+                return {
+                    setName : setName,
+                    setAge : setAge,
+                    setSalary: setSalary,
+                    increaseSalary : increaseSalary,
+                    incrementAge: incrementAge
+                };
+
+	    	})();
+        </pre>
+    </li>
+<li>Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern.
+
+    <pre>
+        var employee = 
+            (function(){
+               //fields
+               let name;
+               let age;
+               let salary;
+                //getter & setter methods
+                let getAge = function(){return age;};
+                let getSalary = function(){return salary;};
+                let getName = function(){return name;};
+                return {
+                    setName : function(newName){name = newName},
+                    setAge : function(newAge){age = newAge},
+                    setSalary: function(newSalary){salary = newSalary},
+                    increaseSalary : function(percentage){salary  = getSalary() + (getSalary()*percentage/100);},
+                    incrementAge: function(){age =getAge()+1;}
+                };
+
+            })();
+    </pre>
+</li>
+<li>Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern.
+<pre>
+        var employee = 
+            (function(){
+               //fields
+               let name;
+               let age;
+               let salary;
+                //getter and setter methods
+                let getAge = function(){return age;};
+                let getSalary = function(){return salary;};
+                let getName = function(){return name;};
+                let empO = {};
+                empO.setName = function(newName){name = newName};
+                empO.setAge = function(newAge){age = newAge};
+                empO.setSalary = function(newSalary){salary = newSalary};
+                empO.increaseSalary = function(percentage){salary  = getSalary() + (getSalary()*percentage/100);};
+                empO.incrementAge = function(){age =getAge()+1;};
+                return empO;
+            })();
+    </pre>
+</li>
+<li>Write a few Javascript instructions to extend the Module of Question 10 to have a public address field and public methods setAddress(newAddress) and getAddress( ).
+<pre>
+    employee.address = "";
+    employee.setAddress = function(newAddress){this.address = newAddress;};
+    employee.getAddress = function(){return this.address;};
+
+</pre>
+
+</li>
+<li>What is the output of the following code?
+    <pre>
+        const promise = new Promise((resolve, reject) => {
+                                        reject("Hattori");
+                                    });
+        promise.then(val => alert("Success: " + val))
+               .catch(e => alert("Error: "" + e));
+           </pre>
+           <p>Error: Hattori</p>
+</li>
+<li>What is the output of the following code?
+    <pre>
+        const promise = new Promise((resolve, reject) => {
+        resolve("Hattori");
+        setTimeout(()=> reject("Yoshi"), 500);
+        });
+        promise.then(val => alert("Success: " + val))
+         .catch(e => alert("Error: " + e));
+    </pre>
+    <p>Success: Hattori</p>
+</li>
+<li>What is the output of the following code?
+<pre>
+    function job(state) {
+        return new Promise(function(resolve, reject) {
+        if (state) {
+            resolve('success');
+        } else {
+            reject('error');
+        }
+        });
+        }
+        let promise = job(true);
+        promise.then(function(data) {
+            console.log(data);
+                return job(false);
+            }
+            )
+        .catch(function(error) {
+        console.log(error);
+        return 'Error caught';
+        });
+</pre>
+<p>success error</p>
+</li>
+
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript Scope</title>
+    <link href="jsScopeExercises.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>JavaScript Scope Exercise</h1>
+<ol>
+    <li> Determine what this Javascript code will print out (without running it):
+		<pre> 
+			x = 1;
+			var a = 5;
+			var b = 10;
+			var c = function(a, b, c) {
+				var x = 10;
+				document.write(x);
+				document.write(a);
+				var f = function(a, b, c) {
+					b = a;
+					document.write(b);
+					b = c;
+					var x = 5;
+				}
+				f(a,b,c);
+				document.write(b);
+ 			}
+			c(8,9,10);
+			document.write(b);
+			document.write(x);
+        </pre>
+        <p>The output is: 10889101</p>
+    </li>
+    <li>What is the difference between a method and function?
+        
+        <p>A function is a group of statements dedicated to perform a certain task. A function in JavaScript is an object. A method, on the other hand, is a function that belongs to a javascript object.</p>
+
+    </li>
+    <li>What does 'this' refer to when used in a Java method?
+    	<p> this keword is used in Java to refer to the object that called the method. </p>
+    </li>
+    <li> What does 'this' refer to when used in a JavaScript method?
+        <p>
+        this keyword is used in JavaScript to refer to the object calling the method(the owner object). 
+
+        </p>
+    </li>
+    <li> What does 'this' refer to when used in a JavaScript constructor function?
+        <p>
+        this keyword is used in JavaScript to refer to the owner object. 
+
+        </p>
+    </li>
+    <li> Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing keyword 'this'.
+When f is called by x.f( ), what does 'this' refer to?
+        <p>
+        this keyword is used in JavaScript to refer to the owner object in this case Object x.
+
+        </p>
+    </li>
+    <li>What is a free variable in JavaScript?
+        <p>
+        A free variable is a variable used within a function, which is neither a formal parameter to the function nor defined in the function's body (and in scope at the point of the variable's use).
+        </p>
+    </li>
+<li>Create an object that has properties with name = "fred" and major="music" and a property that is a function that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
+        <pre>
+        var o = {
+        			name : "fred",
+        			major : "music",
+        			f : function(a, b){
+        					return (a>b || a&lt;b)?Math.min(a,b):a*b;
+        				}
+    			};
+
+        </pre>
+    </li>
+<li>Write Javascript code for creating three Employee objects using the "new" keyword and a constructor function. Employee objects have the following fields: name, salary, position.
+        <pre>
+        function Employee(name, salary, position){
+        	this.name = name;
+        	this.salary = salary;
+        	this.position = position;
+    	}
+    	var emp1 = new Employee('Mk', 100000, 'SE');
+    	var emp2 = new Employee('HG', 100000, 'SD');
+    	var emp3 = new Employee('BB', 100000, 'FD');
+        </pre>
+    </li>
+<li>Write a Javascript function that takes any number of input arguments and returns the product of the arguments.
+        <p>
+	        function product(){
+	        	var total = 1;
+	        	for(let i=0;i&lt;arguments.length;i++){
+	        		total *= arguments[i];
+	        	}	
+	        	return total;
+	    	}
+	    	var p1 = product(1,25,6,10);
+	    	var p2 = product(4,20,5,10);
+        </p>
+    </li>
+<li>Write an arrow function that returns the maximum of its three input arguments.
+        <p>
+        var maximum = (a,b,c) => Math.max(3,9,2);
+        </p>
+    </li>
+
+</ol>
+
+
+
+
+</body>
+</html>

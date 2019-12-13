@@ -1,0 +1,12 @@
+li{
+	font-weight: bold;
+}
+ul>li,li > p,pre{
+    font-weight: normal;
+}
+li>img{
+    float: right;
+}
+li>ul{
+	list-style-type: lower-alpha;
+}
