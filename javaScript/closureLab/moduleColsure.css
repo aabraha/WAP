@@ -1,0 +1,52 @@
+fieldset{
+    border: 2px solid black;
+    margin-top: 10px;
+    width: auto;
+    background-color: #eee;
+    
+}
+
+label{
+    margin-top: 8px;
+}
+
+.inputTxt{
+    margin-bottom: 8px;
+}
+
+.validate {
+    right: 5px;
+    position: fixed;
+    bottom: 0;
+}
+
+.div{
+    margin: auto;
+    width: 1000px;
+    background-color: #E4E4E4;
+}
+
+h1{
+    text-align: center;
+    color: steelblue;
+}
+legend{
+    background-color: white;
+    font-size: 25px;
+    color: steelblue;
+}
+
+.button {
+    background-color: silver;
+    border: none;
+    color: white;
+    padding: 4px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
+}
