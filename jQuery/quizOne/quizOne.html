@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Quiz One</title>
+    <link href="quizOne.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>JQuery Quiz I</h1>
+<ol>
+    <li> 1. In jQuery terminology, what is the difference between the "jQuery function" and the "jQuery object"? 
+        <p class="ans"> $ refers JQuerry function while $() returns JQuery Object. It contains, like any other JQuery Objects, methods that can be used to apply certain effects.</p>
+    </li>
+    <li> Write jQuery code to find all h1 elements that are children of a div element and make their background color red.
+        
+        <pre>
+            Sample HTML:
+            &lt;body&gt;
+            &lt;h1&gt;abc&lt;/h1
+            &gt;&lt;br&gt;
+            &lt;div&gt;
+                &lt;h1&gt;div-1&lt;/h1&gt;
+                &lt;h1&gt;div-2&lt;/h1&gt;
+            &lt;/div&gt;
+            &lt;h1&gt;xyz&lt;/h1&gt;
+            &lt;/body&gt;</pre>
+
+        <pre class="ans">$("div h1").css("background-color","red")</pre>
+
+    </li>
+    <li>Use a jQuery method to insert the text "YES!" at the end of the &lt;p&gt; element
+    	<pre> 
+
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                &lt;script&gt;
+                &lt;!—INSERT YOUR JQUERY CODE HERE - - &gt;
+                &lt;/script&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                &lt;p&gt;Is jQuery FUN or what? &lt;/p&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+
+        </pre>
+        <pre class="ans">$("p").append("YES!");</pre>
+    </li>
+</ol>
+
+
+
+
+</body>
+</html>

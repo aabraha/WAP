@@ -17,6 +17,10 @@ li{
 p{
 	font-weight:bold;
 }
+div>h1{
+	font-weight:bold;
+	background-color:lightblue;
+}
 a{
 	text-decoration:none;
 }
