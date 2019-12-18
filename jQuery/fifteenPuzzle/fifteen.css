@@ -1,3 +1,15 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 15, 2019, 2:48:33 PM
+    Author     : scug
+*/
+
+
+
 body, button {
 	font-family: cursive;
 	font-size: 14pt;
@@ -16,7 +28,7 @@ body, button {
 
 /* This class should be applied to each of the 15 puzzle pieces. */
 .puzzlepiece {
-	background-image: url("background.jpg");
+	background-image: url(background.jpg);
 	border: 5px solid black;
 	width: 90px;
 	height: 90px;
@@ -45,6 +57,41 @@ body, button {
 	background-color: #f88;
 }
 
-/*
+.tile{
+	width: 90px;
+	height: 90px;
+	border: black solid 5px;
+	font-size:  40pt;
+	float: left;
+}
 
+.hovered{
+	border: red solid 5px;
+}
+/*
+init = function() {
+    var puzzleArea = document.getElementById('puzzlearea');
+    var divs = puzzleArea.getElementsByTagName("div");
+      
+    // initialize each piece
+    for (var i=0; i< divs.length; i++) {
+        var div = divs[i];
+        
+        // calculate x and y for this piece
+        var x = ((i % 4) * 100) ;
+        var y = (Math.floor(i / 4) * 100) ;
+
+        // set basic style and background
+        div.className = "puzzlepiece";
+        div.style.left = x + 'px';
+        div.style.top = y + 'px';
+        div.style.backgroundImage = 'url("background.jpg")';
+        div.style.backgroundPosition = -x + 'px ' + (-y) + 'px';
+        
+        // store x and y for later
+        div.x = x;
+        div.y = y; 
+    }        
+};
 */
+
